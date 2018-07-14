@@ -16,7 +16,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "82983342cf057a0a736045a90aee8b3ce2ec07bf"
+  api_key: "b63301409ada3f9ce839f04dff7dc6144598bc7e"
   file:
     - _build/spec.pdf
   skip_cleanup: true
