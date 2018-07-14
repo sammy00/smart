@@ -13,7 +13,6 @@ install:
 
 script:
   - echo "Hello SMaRt"
-  - mkdir _build
 
 deploy:
   provider: releases
