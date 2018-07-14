@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  test:  
+    docker:  
+      - image: golang/go:1.10
+    steps:  
+      - checkout
+      - run: echo "hello Circle-CI"  
+workflows:
+  version: 2
+  test_and_packaging:
+    jobs:
+      - test
