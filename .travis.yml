@@ -6,5 +6,19 @@ branches:
   only:
     - master
 
+install:
+  - apt install texlive-scheme-medium -y
+
 script:
   - echo "Hello SMaRt"
+  - mkdir _build
+  - xelatex -output-directory _build doc/spec.tex
+
+deploy:
+  provider: releases
+  api_key: "82983342cf057a0a736045a90aee8b3ce2ec07bf"
+  file:
+    - _build/spec.pdf
+  skip_cleanup: true
+#  on:
+#    tags: true
