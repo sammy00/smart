@@ -9,8 +9,8 @@ go:
 install:
   - mkdir _build
   - docker pull hub00/texlive
-  - docker run -v doc:/doc -v _build:_build --rm hub00/texlive /bin/sh -c "cd /doc; xelatex -output-directory _build spec.tex"
-  - mv doc/spec.pdf _build/
+  - docker run -v ${PWD}/doc:/doc -v ${PWD}/_build:/_build --rm hub00/texlive /bin/sh -c "cd /doc; xelatex -output-directory /_build spec.tex"
+
 script:
   - echo "Hello SMaRt"
   - mkdir _build
