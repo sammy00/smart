@@ -1,18 +1,19 @@
+sudo: required
+services:
+  - docker
+
 language: go
 go:
-  - 1.9 
-
-branches:
-  only:
-    - master
+  - 1.10 
 
 install:
-  - apt install texlive-scheme-medium -y
-
+  - mkdir _build
+  - docker pull hub00/texlive
+  - docker run -v doc:/doc -v _build:_build --rm hub00/texlive /bin/sh -c "cd /doc; xelatex -output-directory _build spec.tex"
+  - mv doc/spec.pdf _build/
 script:
   - echo "Hello SMaRt"
   - mkdir _build
-  - xelatex -output-directory _build doc/spec.tex
 
 deploy:
   provider: releases
@@ -22,3 +23,7 @@ deploy:
   skip_cleanup: true
 #  on:
 #    tags: true
+
+branches:
+  only:
+    - master
