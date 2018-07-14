@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:  
     docker:  
-      - image: golang/go:1.10
+      - image: circleci/go:1.10
     steps:  
       - checkout
       - run: echo "hello Circle-CI"  
