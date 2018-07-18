@@ -1,8 +1,17 @@
 %!TEX program=xelatex
-\documentclass[a4paper,10pt]{report}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{ctex}
-\usepackage[margin=1cm]{geometry}
+
+\usepackage[linesnumbered,lined,commentsnumbered,ruled,vlined]{algorithm2e}
+\usepackage[top=32mm,right=16mm,bottom=32mm,left=16mm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
 
 \newcommand{\SMR}{SM{\footnotesize A}R{\footnotesize T}}
 
@@ -12,7 +21,28 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
 
-你好
-\SMR
+\SMR 由以下3个子算法组成
+\begin{itemize}
+  \item 客户端操作
+  \item 节点的正常运行阶段
+  \item 节点发生异常时再同步阶段
+\end{itemize}
+
+\section{客户端操作}
+
+\begin{algorithm}
+  \DontPrintSemicolon
+  \SetKwInOut{In}{input}
+  \SetKwInOut{Out}{output}
+
+  \BlankLine
+  \(x\leftarrow 0\)\;
+  \For{\(i\leftarrow 0\) \KwTo \(8\)} {
+    \(x\leftarrow x+i\)\;
+  }
+  \caption{初始化函数}
+\end{algorithm}
+
 \end{document}

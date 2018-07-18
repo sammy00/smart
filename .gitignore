@@ -26,3 +26,6 @@
 .*.lb
 __latexindent_temp.tex
 *.pdf
+
+# artifacts 
+_build/
